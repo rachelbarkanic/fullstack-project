@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "intsureview_be.apps.api",
+    'forms.apps.FormsConfig',
+    'drf_yasg'
+
 ]
 
 MIDDLEWARE = [
