@@ -3,8 +3,8 @@ import Form from './Form';
 
 const Content = () => {
   return (
-    <div className="content">
-      <Form />
+    <div className="posts">
+      <p className="centerText">No Posts</p>
     </div>
   );
 };
