@@ -45,3 +45,73 @@ body {
     font-size: 40px;
     color: white;
 }
+
+.modal {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #26465380;
+}
+
+.form {
+    background-color: #264653;
+    width: 50%;
+    height: 7\80px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 30px;
+    color: #f4a261;
+
+}
+
+.form-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-header-text {
+    font-size: 30px;
+    color: #e9c46a;
+}
+
+.close-btn {
+    text-decoration: none;
+    font-size: 25px;
+    color: #e76f51;
+    margin-top: 10px;
+}
+
+label {
+    font-size: 20px;
+}
+
+.form-group {
+    padding: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    background-color: #2a9d8f;
+    color: #264653
+
+}
+
+.btn {
+    padding: 20px;
+    background-color: #e9c46a;
+    color: #e76f51;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+
+
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+}
