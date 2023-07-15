@@ -7,14 +7,19 @@ from rest_framework.response import Response
 
 
 class FormViewset(viewsets.ModelViewSet):
-     # This viewset only accepts get, post and delete actions
-    serializer_class=FormSerializer
-    queryset=Form.objects.all()
-    http_method_names = ['get', 'post', 'delete']
+     """
+     API endpoint that allows 'Forms' to be viewed, created, deleted
+     """
+     serializer_class=FormSerializer
+     queryset=Form.objects.all()
+     http_method_names = ['get', 'post', 'delete']
+     
+     @action(detail=True, methods=['delete'])
 
-   
-    @action(detail=True, methods=['delete'])
-    def delete(self, request, pk=None):
+     def delete(self, request, pk=None):
+        """
+        Function allowing forms to be deleted with proper responses sent to the FE
+        """
         try:
             form = self.get_object()
             form.delete()

@@ -31,7 +31,7 @@ urlpatterns = [
 router = routers.DefaultRouter()
 router.register(r"users", views.UserViewSet)
 router.register(r"groups", views.GroupViewSet)
-# Register my Form Viewset
+# Register my Form view
 router.register(r"forms", FormViewset)
 
 # Wire up our API using automatic URL routing.
