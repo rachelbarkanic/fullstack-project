@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+fullstack-project/node_modules
 
 # testing
 /coverage
