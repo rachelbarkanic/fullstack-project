@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/main.css";
 
 
 const RideForm = () => {
+    const [modalVisible, setModalVisible] = useState(false)
+
   return (
     <div>
       <div className="form">
@@ -11,7 +13,8 @@ const RideForm = () => {
             <p className="form-header-text">Add a Ride!</p>
           </div>
           <div>
-            <a href="#" className="close-btn">
+            <a href="#" className="close-btn"
+            >
               X
             </a>
           </div>

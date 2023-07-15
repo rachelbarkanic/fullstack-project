@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import '../styles/main.css'
+import Content from "./Content";
 
 const Header = () => {
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <div>
       <div className="header">
         <div className="logo">
           <p className="title">Bike Rides R Us</p>
         </div>
-        <div className="add-section">
-          <a className="add-btn" href='#'>Add a Ride</a>
-        </div>
+ 
       </div>
       </div>
   );

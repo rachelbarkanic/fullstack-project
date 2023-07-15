@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
     const currentYear = new Date().getFullYear();
   return (
-    <footer>
+    <footer className='footer'>
       <p>
         <a
           href="https://www.linkedin.com/in/rachelbarkanic/"
@@ -12,7 +12,7 @@ const Footer = () => {
         >
           Meet the Creator
         </a>
-        <br></br>
+        <br></br><br></br>
         &copy; {currentYear} Bike Rides R Us
       </p>
     </footer>
