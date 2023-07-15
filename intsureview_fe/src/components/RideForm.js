@@ -96,108 +96,107 @@ const RideForm = ({ setFormModalVisible, setModalVisible, getAllPosts }) => {
 
   return (
     <div className="modal">
-      <div className="form">
-        <div className="form-header">
-          <div>
-            <p className="form-header-text">Add a Ride!</p>
-          </div>
-          <div>
-            <a
-              href="#"
-              className="close-btn"
-              onClick={() => setFormModalVisible(false)}
-            >
-              X
-            </a>
-          </div>
-        </div>
-        <div className="form-content">
-          <form action="">
-            <div className="form-group">
-              <label htmlFor="title">Title</label>
-              <input
-                type="text"
-                name="title"
-                id="title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                className="form-control"
-                required
-              />
-              {titleError && <p className="form-error">{titleError}</p>}
+      <div className="form-container">
+        <div className="form">
+          <div className="form-header">
+            <div>
+              <p className="form-header-text">Add a Ride!</p>
             </div>
-            <div className="form-group">
-              <label htmlFor="description">Description</label>
-              <textarea
-                name="description"
-                id=""
-                cols="30"
-                rows="1"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                className="form-control"
-                required
-              ></textarea>
-              {descriptionError && (
-                <p className="form-error">{descriptionError}</p>
-              )}
-            </div>
-            <div className="form-group">
-              <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                name="username"
-                id="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                className="form-control"
-                required
-              />
-              {usernameError && <p className="form-error">{usernameError}</p>}
-            </div>
-            <div className="form-group">
-              <label htmlFor="difficulty">Difficulty (out of 10)</label>
-              <input
-                type="number"
-                name="difficulty"
-                id="difficulty"
-                min="1"
-                max="10"
-                value={difficulty}
-                onChange={(e) => setDifficulty(e.target.value)}
-                className="form-control"
-                required
-              />
-              {difficultyError && (
-                <p className="form-error">{difficultyError}</p>
-              )}
-            </div>
-            <div className="form-group">
-              <label htmlFor="completed">Completed?</label>
-              <select
-                name="completed"
-                value={completed}
-                onChange={(e) => setCompleted(e.target.value)}
-                className="form-control"
-                required
+            <div>
+              <a
+                href="#"
+                className="close-btn"
+                onClick={() => setFormModalVisible(false)}
               >
-                <option value="">-- Select --</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-              </select>
-              {completedError && (
-                <p className="form-error">{completedError}</p>
-              )}
+                X
+              </a>
             </div>
-          </form>
-        </div>
-        <div className="form-group submit-btn">
-          <input
-            type="submit"
-            className="btn"
-            value="Post It"
-            onClick={createPost}
-          />
+          </div>
+          <div className="form-content">
+            <form action="">
+              <div className="form-group">
+                <label htmlFor="title">Title</label>
+                <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  className="form-control"
+                  required
+                />
+                {titleError && <p className="form-error">{titleError}</p>}
+              </div>
+              <div className="form-group">
+                <label htmlFor="description">Description</label>
+                <textarea
+                  name="description"
+                  id=""
+                  cols="30"
+                  rows="1"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  className="form-control"
+                  required
+                ></textarea>
+                {descriptionError && (
+                  <p className="form-error">{descriptionError}</p>
+                )}
+              </div>
+              <div className="form-group">
+                <label htmlFor="username">Username</label>
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className="form-control"
+                  required
+                />
+                {usernameError && <p className="form-error">{usernameError}</p>}
+              </div>
+              <div className="form-group">
+                <label htmlFor="difficulty">Difficulty (out of 10)</label>
+                <input
+                  type="number"
+                  name="difficulty"
+                  id="difficulty"
+                  min="1"
+                  max="10"
+                  value={difficulty}
+                  onChange={(e) => setDifficulty(e.target.value)}
+                  className="form-control"
+                  required
+                />
+                {difficultyError && (
+                  <p className="form-error">{difficultyError}</p>
+                )}
+              </div>
+              <div className="form-group">
+                <label htmlFor="completed">Completed?</label>
+                <select
+                  name="completed"
+                  value={completed}
+                  onChange={(e) => setCompleted(e.target.value)}
+                  className="form-control"
+                  required
+                >
+                  <option value="">-- Select --</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+                {completedError && (
+                  <p className="form-error">{completedError}</p>
+                )}
+              </div>
+            </form>
+          </div>
+          <div className="form-group submit-btn">
+            <button className="btn" onClick={createPost}>
+              Post It
+            </button>
+          </div>
         </div>
       </div>
     </div>

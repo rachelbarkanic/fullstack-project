@@ -17,9 +17,9 @@ const Post = ({ title, description, username, difficulty, completed, onclick }) 
       <div className="post-content">
       <p>
           {description}<br />
-          Added By: {username}<br />
+          <p className="secondary-color">Added By: {username}</p><br />
           Difficulty: {difficulty}/10<br />
-          Completed: {completed ? 'Yes' : 'No'}
+          <p className="secondary-color">Completed: {completed ? 'Yes' : 'No'}</p>
         </p>
       </div>
     </div>

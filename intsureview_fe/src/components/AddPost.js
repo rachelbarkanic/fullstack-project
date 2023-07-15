@@ -20,7 +20,7 @@ const AddPost = ({ setModalVisible, getAllPosts }) => {
         <div className="modal">
           <RideForm
             setFormModalVisible={setFormModalVisible}
-            setModalVisible={setModalVisible}
+            setModalVisible={setModalVisible} // Pass setModalVisible here
             getAllPosts={getAllPosts}
           />
         </div>

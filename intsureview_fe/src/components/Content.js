@@ -5,7 +5,7 @@ import '../styles/main.css';
 
 const baseURL = "http://localhost:8000";
 
-const Content = () => {
+const Content = ({ setModalVisible }) => {
   const [posts, setPosts] = useState([]);
 
   const getAllPosts = async () => {
@@ -60,7 +60,7 @@ const Content = () => {
         </div>
       )}
 
-      <AddPost getAllPosts={getAllPosts} />
+      <AddPost setModalVisible={setModalVisible} getAllPosts={getAllPosts} />
     </div>
   );
 };
