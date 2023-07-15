@@ -1,10 +1,12 @@
 import React from "react";
-import '../styles/main.css'
+import "../styles/main.css";
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear();
+  // Get the current year
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className='footer'>
+    <footer className="footer">
       <p>
         <a
           href="https://www.linkedin.com/in/rachelbarkanic/"
@@ -13,7 +15,8 @@ const Footer = () => {
         >
           Meet the Creator
         </a>
-        <br></br><br></br>
+        <br></br>
+        <br></br>
         &copy; {currentYear} Bike Rides R Us
       </p>
     </footer>

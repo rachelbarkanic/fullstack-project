@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import AddPost from "./AddPost";
 import Post from "./Post";
-import '../styles/main.css';
+import "../styles/main.css";
 
 const baseURL = "http://localhost:8000";
 
 const Content = ({ setModalVisible }) => {
   const [posts, setPosts] = useState([]);
 
+  // Fetch all posts from the server
   const getAllPosts = async () => {
     const response = await fetch(`${baseURL}/forms/`);
     const data = await response.json();
@@ -21,9 +22,11 @@ const Content = ({ setModalVisible }) => {
   };
 
   useEffect(() => {
+    // Call getAllPosts when the component mounts
     getAllPosts();
   }, []);
 
+  // Delete a post with the specified ID
   const deleteItem = async (postId) => {
     console.log(postId);
 
@@ -35,6 +38,7 @@ const Content = ({ setModalVisible }) => {
       console.log(response.status);
     }
 
+    // Refresh the post list after deletion
     getAllPosts();
   };
 

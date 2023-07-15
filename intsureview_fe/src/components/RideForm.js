@@ -4,6 +4,7 @@ import "../styles/main.css";
 const baseURL = "http://localhost:8000";
 
 const RideForm = ({ setFormModalVisible, setModalVisible, getAllPosts }) => {
+  // State variables for form inputs and errors
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [username, setUsername] = useState("");
@@ -61,6 +62,7 @@ const RideForm = ({ setFormModalVisible, setModalVisible, getAllPosts }) => {
       return;
     }
 
+    // Create a new request object with form data
     const new_request = new Request(`${baseURL}/forms/`, {
       body: JSON.stringify({
         title,
@@ -75,6 +77,7 @@ const RideForm = ({ setFormModalVisible, setModalVisible, getAllPosts }) => {
       method: "POST",
     });
 
+    // Send the request to create a new post
     const response = await fetch(new_request);
     const data = await response.json();
 
@@ -84,6 +87,7 @@ const RideForm = ({ setFormModalVisible, setModalVisible, getAllPosts }) => {
       console.log("Failed Network Request");
     }
 
+    // Reset form inputs and errors, and update visibility states
     setTitle("");
     setDescription("");
     setUsername("");

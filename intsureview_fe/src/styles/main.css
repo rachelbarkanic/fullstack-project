@@ -1,12 +1,15 @@
+/* Import the Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
 
+/* Global styles */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Tilt Neon';
+  font-family: 'Tilt Neon'; /* Apply 'Tilt Neon' font family to all elements */
 }
 
+/* Body styles */
 body {
   display: flex;
   flex-direction: column;
@@ -14,6 +17,7 @@ body {
   background-color: #2a9d8f;
 }
 
+/* Header styles */
 .header {
   padding: 25px;
   display: flex;
@@ -26,6 +30,7 @@ body {
   font-size: 35px;
 }
 
+/* Add section styles */
 .add-section {
   margin-top: 10px;
   display: flex;
@@ -45,6 +50,7 @@ body {
   cursor: pointer;
 }
 
+/* Content styles */
 .content {
   flex-grow: 1;
   padding-bottom: 80px;
@@ -65,6 +71,7 @@ body {
   margin-bottom: 20px;
 }
 
+/* Modal styles */
 .modal {
   height: 100%;
   width: 100%;
@@ -82,15 +89,17 @@ body {
   display: none;
 }
 
+/* Form container styles */
 .form-container {
   width: 100%;
-  min-height: calc(100vh - 200px); /* Adjust the height as needed */
+  min-height: calc(100vh - 200px);
   display: flex;
   justify-content: center;
   align-items: center;
   overflow-y: auto;
 }
 
+/* Form styles */
 .form {
   background-color: #264653;
   width: 50%;
@@ -101,7 +110,7 @@ body {
   position: relative;
   z-index: 3;
   padding: 20px;
-  overflow: hidden; /* Hide overflow initially */
+  overflow: hidden;
 }
 
 .form-header {
@@ -122,22 +131,26 @@ body {
   margin-top: 10px;
 }
 
+/* Label styles */
 label {
   font-size: 20px;
 }
 
+/* Form group styles */
 .form-group {
   padding: 15px;
 }
 
+/* Form control styles */
 .form-control {
   width: 100%;
   padding: 15px;
   background-color: #2a9d8f;
   color: #264653;
-  font-size: 19px; /* Updated font size */
+  font-size: 19px;
 }
 
+/* Button styles */
 .btn {
   padding: 10px;
   border-radius: 10px;
@@ -148,6 +161,7 @@ label {
   font-size: 20px;
 }
 
+/* Submit button styles */
 .submit-btn {
   display: flex;
   justify-content: center;
@@ -155,6 +169,7 @@ label {
   margin-top: 20px;
 }
 
+/* Footer styles */
 .footer {
   position: fixed;
   bottom: 0;
@@ -175,12 +190,14 @@ label {
   text-decoration: underline;
 }
 
+/* Post list styles */
 .post-list {
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
 }
 
+/* Post styles */
 .post {
   background-color: #264653;
   padding: 20px;
@@ -209,11 +226,13 @@ label {
   font-weight: bold;
 }
 
+/* Close button styles */
 .close {
   text-decoration: none;
   color: #f4a261;
 }
 
+/* Media query styles */
 @media (max-width: 700px) {
   .form {
     width: 80%;
@@ -224,22 +243,25 @@ label {
   }
 }
 
+/* Form content styles */
 .form-content {
   overflow-y: auto;
   max-height: 600px;
-  padding-right: 10px; 
+  padding-right: 10px;
 }
 
+/* Secondary color styles */
 .secondary-color {
-    color: #e76f51;
+  color: #e76f51;
 }
 
-
+/* Form error styles */
 .form-error {
   color: #e9c46a;
   margin-bottom: 10px;
 }
 
+/* Scrollbar styles */
 .form-content::-webkit-scrollbar {
   width: 8px;
   background-color: #2a9d8f;

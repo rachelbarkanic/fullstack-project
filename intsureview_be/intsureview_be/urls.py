@@ -12,20 +12,20 @@ from drf_yasg import openapi
 
 # Swagger Added
 schema_view = get_schema_view(
-   openapi.Info(
-      title="Intsureview API",
-      default_version='v1',
-      description="This is an Intsureview API",
-      
-   ),
-   public=True,
-   permission_classes=(permissions.AllowAny,),
+    openapi.Info(
+        title="Intsureview API",
+        default_version='v1',
+        description="This is an Intsureview API",
+
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
 )
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    
+
 ]
 
 router = routers.DefaultRouter()
@@ -40,6 +40,8 @@ router.register(r"forms", FormViewset)
 urlpatterns = [
     path("", include(router.urls)),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path('swagger/', schema_view.with_ui('swagger',
+         cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc',
+         cache_timeout=0), name='schema-redoc'),
 ]

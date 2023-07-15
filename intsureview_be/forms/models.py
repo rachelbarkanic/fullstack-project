@@ -1,7 +1,9 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-#Created Form model class, instances represented as 'Posts' on the FE
+# Created Form model class, instances represented as 'Posts' on the FE
+
+
 class Form(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
