@@ -6,10 +6,14 @@ import Footer from "./components/Footer";
 const App = () => {
   const [modalVisible, setModalVisible] = useState(false);
 
+  const handleModalVisibility = () => {
+    setModalVisible(!modalVisible);
+  };
+
   return (
     <div>
       <Header />
-      <Content setModalVisible={setModalVisible} />
+      <Content setModalVisible={handleModalVisibility} />
       <Footer />
     </div>
   );
