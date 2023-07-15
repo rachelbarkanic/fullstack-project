@@ -1,110 +1,28 @@
-import React, { useState, useEffect } from "react";
-import Post from "./Post";
+import React from "react";
 
-const baseURL = "http://localhost:8000";
-
-const Content = () => {
-  const [modalVisible, setModalVisible] = useState(false);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [username, setUsername] = useState("");
-  const [difficulty, setDifficulty] = useState("");
-  const [completed, setCompleted] = useState("");
-  const [posts, setPosts] = useState([]);
-
-  const getAllPosts = async () => {
-    const response = await fetch(`${baseURL}/forms/`);
-
-    const data = await response.json();
-
-    if (response.ok) {
-      console.log(data);
-      setPosts(data.results);
-    } else {
-      console.log("Failed Network Request");
-    }
-  };
-
-
-  useEffect(() => {
-    getAllPosts();
-  }, []);
-
-  const deleteItem = async (postId) => {
-    console.log(postId);
-
-    const response = await fetch(`${baseURL}/forms/${postId}/`, {
-      method: 'DELETE'
-    } )
-
-    if(response.ok){
-      console.log(response.status)
-    }
-
-    getAllPosts()
-  };
-
-  const createPost = async (event) => {
-    event.preventDefault();
-
-    const new_request = new Request(`${baseURL}/forms/`, {
-      body: JSON.stringify({
-        title,
-        description,
-        username,
-        difficulty,
-        completed: completed ? 'Yes' : 'No',
-      }),
-      headers:{
-        'Content-Type':'Application/Json'
-      },
-      method: 'POST'
-    });
-
-    const response = await fetch(new_request);
-
-    const data = await response.json();
-
-    if (response.ok){
-      console.log(data)
-    }
-    else{
-      console.log('Failed Network Request')
-    }
-
-    setTitle("");
-    setDescription("");
-    setUsername("");
-    setDifficulty(1);
-    setCompleted("");
-    setModalVisible(false);
-    getAllPosts();
-  };
-  
+const AddPost = ({
+  modalVisible,
+  setModalVisible,
+  title,
+  setTitle,
+  description,
+  setDescription,
+  username,
+  setUsername,
+  difficulty,
+  setDifficulty,
+  completed,
+  setCompleted,
+  createPost,
+}) => {
   return (
     <div>
-      {posts.length > 0 ? (
-        <div className="post-list">
-          {posts.map((item) => (
-            <Post
-              title={item.title}
-              description={item.description}
-              username={item.username}
-              difficulty={item.difficulty}
-              completed={item.completed}
-              onclick={() => deleteItem(item.id)}
-              key={item.id}
-            />
-          ))}
-        </div>
-      ) : (
-        <div className="posts">
-          <p className="centerText">No Posts</p>
-        </div>
-      )}
-
       <div className="add-section">
-        <a className="add-btn" href="#" onClick={() => setModalVisible(true)}>
+        <a
+          className="add-btn"
+          href="#"
+          onClick={() => setModalVisible(true)}
+        >
           Add a Ride
         </a>
       </div>
@@ -185,7 +103,7 @@ const Content = () => {
                 className="form-control"
                 required
               >
-                
+                <option value="">Select an option</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
               </select>
@@ -205,4 +123,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default AddPost;

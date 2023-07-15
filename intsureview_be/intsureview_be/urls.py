@@ -5,20 +5,17 @@ from django.urls import include, path
 from rest_framework import routers
 from intsureview_be.apps.api import views
 from forms.views import FormViewset
-
-
-from django.urls import re_path
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
 
-
+# Swagger Added
 schema_view = get_schema_view(
    openapi.Info(
       title="Intsureview API",
       default_version='v1',
-      description="This is an Intureview API",
+      description="This is an Intsureview API",
       
    ),
    public=True,
@@ -35,7 +32,7 @@ router = routers.DefaultRouter()
 router.register(r"users", views.UserViewSet)
 router.register(r"groups", views.GroupViewSet)
 # Register my Form Viewset
-router.register('forms', FormViewset)
+router.register(r"forms", FormViewset)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

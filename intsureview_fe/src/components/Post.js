@@ -14,11 +14,11 @@ const Post = ({ title, description, username, difficulty, completed, onclick }) 
         </div>
       </div>
       <div className="post-content">
-        <p>
-          {description}
-          {username}
-          {difficulty}
-          {completed}
+      <p>
+          {description}<br />
+          Added By: {username}<br />
+          Difficulty: {difficulty}/10<br />
+          Completed: {completed ? 'Yes' : 'No'}
         </p>
       </div>
     </div>

@@ -13,8 +13,7 @@ const RideForm = () => {
             <p className="form-header-text">Add a Ride!</p>
           </div>
           <div>
-            <a href="#" className="close-btn"
-            >
+            <a href="#" className="close-btn">
               X
             </a>
           </div>

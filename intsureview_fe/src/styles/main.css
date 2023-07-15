@@ -133,6 +133,8 @@ label {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    text-align: center;
+    padding: 20px;
     
 }
 
@@ -151,6 +153,7 @@ label {
     min-height: 25%;
     margin: 15px;
     overflow: hidden;
+    color: #2a9d8f;
 }
 
 .post:hover {
@@ -165,6 +168,7 @@ label {
 .post-title {
     font-size: 20px;
     color: #e9c46a;
+    font-weight: bold;
 }
 
 .close {
