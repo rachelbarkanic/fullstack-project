@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./components/Header";
+import Content from "./components/Content";
+import Footer from "./components/Footer";
 
-function App() {
+const App = () => {
+  // State to track the visibility of the modal
+  const [modalVisible, setModalVisible] = useState(false);
+
+  // Function to toggle the modal visibility
+  const handleModalVisibility = () => {
+    setModalVisible(!modalVisible);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      {/* Render the Content component and pass the handleModalVisibility function */}
+      <Content setModalVisible={handleModalVisibility} />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;

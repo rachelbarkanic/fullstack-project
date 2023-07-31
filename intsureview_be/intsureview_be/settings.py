@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "intsureview_be.apps.api",
+    'forms.apps.FormsConfig',
+    'drf_yasg',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -49,6 +52,14 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
+]
+
+#Let React and Django Interact
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+
 ]
 
 ROOT_URLCONF = "intsureview_be.urls"
